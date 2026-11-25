@@ -85,8 +85,7 @@ dsh plugin --profile web add @sansteel/dsh-data-warehouse-brain@1.0.1
 ```bash
 # 1) 传包（从你自己的电脑）
 scp sansteel-dsh-data-warehouse-brain-1.0.1.tgz user@10.233.2.32:/tmp/
-#    校验：sha256sum → 8af47103e77fbf697cbaeb0cdef030eea9eb6b58b62282e23626e397363a891d
-
+#    校验：sha256sum <tgz> 与发布说明里的值比对
 # 2) 放到带版本号的共享目录（建议只读）
 mkdir -p /opt/dsh-plugins/sansteel-dsh-data-warehouse-brain/1.0.1
 tar xzf /tmp/sansteel-dsh-data-warehouse-brain-1.0.1.tgz \

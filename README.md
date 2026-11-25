@@ -46,8 +46,7 @@ dsh plugin --profile web add file:/opt/dsh-plugins/package
 然后重启 DSH。
 
 > 校验下载完整性：`sha256sum sansteel-dsh-data-warehouse-brain-1.0.1.tgz`
-> v1.0.1 = `8af47103e77fbf697cbaeb0cdef030eea9eb6b58b62282e23626e397363a891d`（2,486,272 B）
-
+> 校验完整性：`sha256sum <tgz>`，与 GitHub Release 附件说明里的值比对。
 如果所在网络有 GitHub 加速代理，也可以直接把代理 URL 当 tarball 装：
 
 ```bash
