@@ -18,7 +18,7 @@
 ### 方式二：命令行
 
 ```bash
-dsh plugin --profile web add github:lin7397100/dsh-data-warehouse-brain@v1.0.0
+dsh plugin --profile web add github:lin7397100/dsh-data-warehouse-brain@v1.0.1
 ```
 
 ### 方式三：离线 / 内网服务器（无法访问 codeload.github.com 时）
@@ -27,10 +27,10 @@ dsh plugin --profile web add github:lin7397100/dsh-data-warehouse-brain@v1.0.0
 
 ```bash
 # 1) 把 tgz 传到目标机器（这里从你自己的电脑 scp）
-scp sansteel-dsh-data-warehouse-brain-1.0.0.tgz user@server:/tmp/
+scp sansteel-dsh-data-warehouse-brain-1.0.1.tgz user@server:/tmp/
 
 # 2) 解包成目录（npm 包的根在 package/）
-mkdir -p /opt/dsh-plugins && tar xzf /tmp/sansteel-dsh-data-warehouse-brain-1.0.0.tgz -C /opt/dsh-plugins
+mkdir -p /opt/dsh-plugins && tar xzf /tmp/sansteel-dsh-data-warehouse-brain-1.0.1.tgz -C /opt/dsh-plugins
 
 # 3a) 图形界面：设置 → 插件 → 安装插件 → 填绝对路径 /opt/dsh-plugins/package
 # 3b) 或命令行：
@@ -45,14 +45,16 @@ dsh plugin --profile web add file:/opt/dsh-plugins/package
 
 然后重启 DSH。
 
-> 校验下载完整性：`sha256sum sansteel-dsh-data-warehouse-brain-1.0.0.tgz`
-> v1.0.0 = `63bb63fe3a1c2faf9978be4383cbd9686cf6dbee38fd728acc1d14f783601890`（2,478,892 B）
+> 校验下载完整性：`sha256sum sansteel-dsh-data-warehouse-brain-1.0.1.tgz`
+> v1.0.1 = `8af47103e77fbf697cbaeb0cdef030eea9eb6b58b62282e23626e397363a891d`（2,486,272 B）
 
 如果所在网络有 GitHub 加速代理，也可以直接把代理 URL 当 tarball 装：
 
 ```bash
-dsh plugin --profile web add https://<代理前缀>/https://github.com/lin7397100/dsh-data-warehouse-brain/archive/refs/tags/v1.0.0.tar.gz
+dsh plugin --profile web add https://<代理前缀>/https://github.com/lin7397100/dsh-data-warehouse-brain/archive/refs/tags/v1.0.1.tar.gz
 ```
+
+> 内网服务器（连不上 codeload）的完整方案——内网 npm 源、本地目录分发、批量部署、升级回滚、排查清单——见 [`docs/INSTALL-INTRANET.md`](docs/INSTALL-INTRANET.md)，另附一键脚本 `scripts/install_offline.sh`。
 
 > 安装后**必须重启 DSH**：preset 组合与客户端插件在进程启动时装配。
 
