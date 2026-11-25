@@ -228,6 +228,32 @@ def main():
     else:
         bad("bundledSkillDir 解析目标异常：%s" % sorted(skill_exprs))
 
+    print("== 10. 明文凭据门禁 ==")
+    cred_words = ("clientsecret", "client_secret", "corpsecret", "password",
+                  "passwd", "lightcodegtw-token", "api_key", "access_token")
+    hex32 = re.compile(r"[A-Fa-f0-9]{24,}")
+    leaked = []
+    for base, dirs, files in os.walk(PKG):
+        dirs[:] = [d for d in dirs
+                   if d not in (".git", "node_modules", "__pycache__", "_vendor", "scripts")]
+        for fn in files:
+            if not fn.endswith((".py", ".json", ".md", ".yml", ".yaml", ".sh", ".ps1")):
+                continue
+            fp = os.path.join(base, fn)
+            try:
+                body = read(fp)
+            except (OSError, UnicodeDecodeError):
+                continue
+            for line in body.split("\n"):
+                low = line.lower()
+                if hex32.search(line) and any(w in low for w in cred_words):
+                    leaked.append(os.path.relpath(fp, PKG))
+                    break
+    if leaked:
+        bad("疑似明文凭据：%s" % leaked[:5])
+    else:
+        ok("无明文凭据（凭据一律走 $DSH_HOME/.env）")
+
     print()
     print("通过 %d 项，失败 %d 项" % (len(PASSED), len(FAILED)))
     if FAILED:

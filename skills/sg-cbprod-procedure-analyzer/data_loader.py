@@ -60,7 +60,7 @@ class DataSourceLoader:
         
         payload = {
             "clientId": "sgdw-cb01",
-            "clientSecret": "537410A26EC7FE29B7258A7861D1C59F",
+            "clientSecret": os.getenv("EPLAT_CLIENT_SECRET_CB01", ""),
             "params": {
                 "startTimestamp": start_timestamp
             },

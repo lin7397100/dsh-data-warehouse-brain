@@ -21,14 +21,14 @@ tools_required: [exec]
 |---|---|
 | **API** | `http://eplat.fjsg.com/service/D_A_SMBBCS01_JOBLOGS_LD1D_X` |
 | **方法** | POST `application/json;charset=UTF-8` |
-| **认证** | `clientId=sgdw-cs01` · `clientSecret=40E25CA4DA58B18D506A48048C60ADA6` |
+| **认证** | `clientId=sgdw-cs01` · `clientSecret=${EPLAT_CLIENT_SECRET_CS01}` |
 | **默认模块** | `GZ4,GZ5,GZ6`（逗号分隔可覆盖） |
 | **默认时间窗** | `05:30`–`07:00`（ETL_TIME） |
 | **单模块上限** | 2000 条 |
 
 **请求体**：
 ```json
-{"clientId":"sgdw-cs01","clientSecret":"40E25CA4DA58B18D506A48048C60ADA6",
+{"clientId":"sgdw-cs01","clientSecret":"${EPLAT_CLIENT_SECRET_CS01}",
  "params":{"etlTime":"YYYY-MM-DD","moduleType":"GZ4"},
  "showCount":"true","offset":"0","limit":2000}
 ```

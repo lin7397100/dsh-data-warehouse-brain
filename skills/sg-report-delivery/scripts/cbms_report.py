@@ -66,7 +66,7 @@ CONFIG = {
     # 每日点检应用的 Token 接口（原驾驶舱 D_A_SMBBRAOC00_TOKEN 已废弃）
     "TOKEN_API_URL": os.getenv("TOKEN_API_URL", "http://eplat.fjsg.com/service/D_A_SMBBRAOC00_MRDJ_TOKEN"),
     "TOKEN_CLIENT_ID": os.getenv("TOKEN_CLIENT_ID", "sgoc-oc01"),
-    "TOKEN_CLIENT_SECRET": os.getenv("TOKEN_CLIENT_SECRET", "FCCDFACD0DED39AEE63462C112A4F412"),
+    "TOKEN_CLIENT_SECRET": os.getenv("TOKEN_CLIENT_SECRET", os.getenv("WECOM_TOKEN_CLIENT_SECRET", "")),
     "WECOM_BASE_URL": os.getenv("WECOM_BASE_URL", "https://wecom.fjsg.com.cn"),
     # 每日点检应用 AgentId（原驾驶舱 1000046）
     "WECOM_AGENT_ID": int(os.getenv("WECOM_AGENT_ID", "1000078")),

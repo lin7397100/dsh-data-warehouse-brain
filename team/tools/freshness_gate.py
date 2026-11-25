@@ -62,9 +62,9 @@ def parse_ts(v):
 # 来源：skills/sg-gzprod-etl-analyzer（ETL 抽数日志）
 #       skills/sg-cbprod-procedure-analyzer（存储过程执行日志）
 ETL_API = "http://eplat.fjsg.com/service/D_A_SMBBCS01_JOBLOGS_LD1D_X"
-ETL_AUTH = ("sgdw-cs01", "40E25CA4DA58B18D506A48048C60ADA6")
+ETL_AUTH = ("sgdw-cs01", os.getenv("EPLAT_CLIENT_SECRET_CS01", ""))
 PROC_API = "http://eplat.fjsg.com/service/D_A_SMBBCB00_PJJOB"
-PROC_AUTH = ("sgdw-cb01", "537410A26EC7FE29B7258A7861D1C59F")
+PROC_AUTH = ("sgdw-cb01", os.getenv("EPLAT_CLIENT_SECRET_CS01", ""))
 
 
 def _post_json(url, payload, timeout=60):

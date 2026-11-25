@@ -22,7 +22,7 @@
     "auth": {
       "type": "clientId",
       "clientId": "sgdw-cb01",
-      "clientSecret": "537410A26EC7FE29B7258A7861D1C59F"
+      "clientSecret": ""
     }
   },
   "output": {

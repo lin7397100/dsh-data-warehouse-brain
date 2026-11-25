@@ -44,7 +44,7 @@ tools_required: [exec]
 |--------|-----|
 | TOKEN_API_URL | `http://eplat.fjsg.com/service/D_A_SMBBRAOC00_MRDJ_TOKEN` |
 | TOKEN_CLIENT_ID | `sgoc-oc01` |
-| TOKEN_CLIENT_SECRET | `FCCDFACD0DED39AEE63462C112A4F412` |
+| TOKEN_CLIENT_SECRET | `${WECOM_TOKEN_CLIENT_SECRET}` |
 | WECOM_BASE_URL | `https://wecom.fjsg.com.cn` |
 | WECOM_AGENT_ID | `1000078`（每日点检） |
 

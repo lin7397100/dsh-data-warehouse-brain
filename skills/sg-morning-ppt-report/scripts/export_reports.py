@@ -30,7 +30,7 @@ from PyPDF2.generic import RectangleObject
 API_URL = "http://eplat.fjsg.com/service/D_A_SMBBZZ00_ZHPPTINFO"
 API_BODY = {
     "clientId": "sgdw-gz01",
-    "clientSecret": "26DB5B8E067BB65539A17E87BC8C5AC7",
+    "clientSecret": os.getenv("EPLAT_CLIENT_SECRET_GZ01", ""),
     "params": {},
     "showCount": "true",
     "offset": "0",
@@ -52,7 +52,7 @@ WAIT_MS = 5000
 # ── 企微配置 ────────────────────────────────────────────
 TOKEN_API_URL = os.getenv("TOKEN_API_URL", "http://eplat.fjsg.com/service/D_A_SMBBRAOC00_MRDJ_TOKEN")
 TOKEN_CLIENT_ID = os.getenv("TOKEN_CLIENT_ID", "sgoc-oc01")
-TOKEN_CLIENT_SECRET = os.getenv("TOKEN_CLIENT_SECRET", "FCCDFACD0DED39AEE63462C112A4F412")
+TOKEN_CLIENT_SECRET = os.getenv("TOKEN_CLIENT_SECRET", os.getenv("EPLAT_CLIENT_SECRET_GZ01", ""))
 WECOM_BASE_URL = "https://wecom.fjsg.com.cn"
 WECOM_CHATID = os.getenv("WECOM_CHATID", "MTk3MDMyNTYwMzAxNTYxMjpHygrR7KYUifUkH0BE_m4")
 

@@ -19,3 +19,8 @@ traces/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# 凭据（只提交模板）
+.env
+.env.*
+!.env.example

@@ -21,14 +21,14 @@ tools_required: [exec]
 |---|---|
 | **API** | `http://eplat.fjsg.com/service/D_A_SMBBCB00_PJJOB` |
 | **方法** | POST `application/json;charset=UTF-8` |
-| **认证** | `clientId=sgdw-cb01` · `clientSecret=537410A26EC7FE29B7258A7861D1C59F` |
+| **认证** | `clientId=sgdw-cb01` · `clientSecret=${EPLAT_CLIENT_SECRET_CB01}` |
 | **日期参数** | `params.startTimestamp`，`YYYY-MM-DD` |
 | **默认时间窗** | `05:00`–`07:00`（按 `START_TIMESTAMP` 的 HHMM 过滤） |
 | **上限** | 2000 条 |
 
 **请求体**：
 ```json
-{"clientId":"sgdw-cb01","clientSecret":"537410A26EC7FE29B7258A7861D1C59F",
+{"clientId":"sgdw-cb01","clientSecret":"${EPLAT_CLIENT_SECRET_CB01}",
  "params":{"startTimestamp":"YYYY-MM-DD"},
  "showCount":"true","offset":"0","limit":2000}
 ```

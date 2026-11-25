@@ -14,7 +14,7 @@ CONFIG = {
     "WECOM_CHATID":       os.getenv("WECOM_CHATID",    "MTk3MDMyNTYwMzAxNTYxMjpHygrR7KYUifUkH0BE_m4"),
     "TOKEN_API_URL":      os.getenv("TOKEN_API_URL",   "http://eplat.fjsg.com/service/D_A_SMBBRAOC00_MRDJ_TOKEN"),
     "TOKEN_CLIENT_ID":    os.getenv("TOKEN_CLIENT_ID", "sgoc-oc01"),
-    "TOKEN_CLIENT_SECRET":os.getenv("TOKEN_CLIENT_SECRET","FCCDFACD0DED39AEE63462C112A4F412"),
+    "TOKEN_CLIENT_SECRET":os.getenv("TOKEN_CLIENT_SECRET",os.getenv("EPLAT_CLIENT_SECRET_CS01", "")),
 }
 
 

@@ -56,6 +56,8 @@ dsh plugin --profile web add https://<代理前缀>/https://github.com/lin739710
 > 内网服务器（连不上 codeload）的完整方案——内网 npm 源、本地目录分发、批量部署、升级回滚、排查清单——见 [`docs/INSTALL-INTRANET.md`](docs/INSTALL-INTRANET.md)，另附一键脚本 `scripts/install_offline.sh`。
 >
 > 想发到 npm（之后所有人一条命令装完、不碰 GitHub）：见 [`docs/PUBLISH-NPM.md`](docs/PUBLISH-NPM.md)，附发布脚本 `scripts/publish_npm.ps1`。
+>
+> **内网凭据（EPLAT 5sApi / 企微 / DB2 / MCP / 帆软）怎么填**：见 [`docs/AUTH-SETUP.md`](docs/AUTH-SETUP.md) —— 含变量总表、一句话填报模板、连通性校验与泄露处置流程；模板文件 [`.env.example`](.env.example)，一键填报 `scripts/write_env.py`，明文凭据扫描 `scripts/scrub_secrets.py`。
 
 > 安装后**必须重启 DSH**：preset 组合与客户端插件在进程启动时装配。
 

@@ -88,7 +88,7 @@ class DataSourceLoader:
         for mod in modules:
             payload = {
                 "clientId": "sgdw-cs01",
-                "clientSecret": "40E25CA4DA58B18D506A48048C60ADA6",
+                "clientSecret": os.getenv("EPLAT_CLIENT_SECRET_CS01", ""),
                 "params": {
                     "etlTime": etl_date,
                     "moduleType": mod
