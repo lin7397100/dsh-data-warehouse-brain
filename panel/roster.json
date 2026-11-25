@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-25T11:17:32+08:00",
+    "generated_at": "2026-11-25T15:47:18+08:00",
     "package": "@sansteel/dsh-data-warehouse-brain",
     "count": 24,
     "skill_count": 67,
@@ -71,7 +71,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 10159,
+      "prefix_len": 60218,
       "persona_file": "agents\\data-warehouse-brain-team-lead.md"
     },
     {
@@ -132,7 +132,7 @@
           "version": "2.0.0"
         }
       ],
-      "prefix_len": 8998,
+      "prefix_len": 8960,
       "persona_file": "agents\\sg-semantic.md"
     },
     {
@@ -193,7 +193,7 @@
           "version": "1.1.0"
         }
       ],
-      "prefix_len": 14180,
+      "prefix_len": 14171,
       "persona_file": "agents\\sg-ontology.md"
     },
     {
@@ -290,7 +290,7 @@
           "version": ""
         }
       ],
-      "prefix_len": 6580,
+      "prefix_len": 6529,
       "persona_file": "agents\\sg-metadata.md"
     },
     {
@@ -387,7 +387,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6437,
+      "prefix_len": 6383,
       "persona_file": "agents\\sg-development.md"
     },
     {
@@ -454,7 +454,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6323,
+      "prefix_len": 6351,
       "persona_file": "agents\\sg-quality.md"
     },
     {
@@ -545,7 +545,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 19320,
+      "prefix_len": 19394,
       "persona_file": "agents\\sg-insight.md"
     },
     {
@@ -605,7 +605,7 @@
           "version": "1.0.1"
         }
       ],
-      "prefix_len": 3528,
+      "prefix_len": 3458,
       "persona_file": "agents\\sg-governance.md"
     },
     {
@@ -654,7 +654,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6198,
+      "prefix_len": 6145,
       "persona_file": "agents\\sg-skill-evolution.md"
     },
     {
@@ -703,7 +703,7 @@
           "version": ""
         }
       ],
-      "prefix_len": 1567,
+      "prefix_len": 1479,
       "persona_file": "agents\\sg-ontology-app-builder.md"
     },
     {
@@ -758,7 +758,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 7767,
+      "prefix_len": 7708,
       "persona_file": "agents\\sg-metric-builder.md"
     },
     {
@@ -807,7 +807,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 4983,
+      "prefix_len": 5003,
       "persona_file": "agents\\sg-memory.md"
     },
     {
@@ -850,7 +850,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 10437,
+      "prefix_len": 10563,
       "persona_file": "agents\\sg-supervisor.md"
     },
     {
@@ -899,7 +899,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 2048,
+      "prefix_len": 1965,
       "persona_file": "agents\\sg-zhishu-dashboard-designer.md"
     },
     {
@@ -948,7 +948,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3815,
+      "prefix_len": 3758,
       "persona_file": "agents\\sg-zhishu-report-composer.md"
     },
     {
@@ -1015,7 +1015,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 8137,
+      "prefix_len": 8104,
       "persona_file": "agents\\sg-wecom-doc.md"
     },
     {
@@ -1082,7 +1082,7 @@
           "version": "3.0.0"
         }
       ],
-      "prefix_len": 3392,
+      "prefix_len": 3405,
       "persona_file": "agents\\sg-gzprod.md"
     },
     {
@@ -1149,7 +1149,7 @@
           "version": "2.0.0"
         }
       ],
-      "prefix_len": 7071,
+      "prefix_len": 7124,
       "persona_file": "agents\\sg-cbprod.md"
     },
     {
@@ -1204,7 +1204,7 @@
           "version": "1.1.0"
         }
       ],
-      "prefix_len": 3817,
+      "prefix_len": 3747,
       "persona_file": "agents\\sg-5s-dev.md"
     },
     {
@@ -1259,7 +1259,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 2940,
+      "prefix_len": 2865,
       "persona_file": "agents\\sg-5s-qa.md"
     },
     {
@@ -1301,7 +1301,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 2612,
+      "prefix_len": 2528,
       "persona_file": "agents\\sg-semantic-modeler.md"
     },
     {
@@ -1343,7 +1343,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3746,
+      "prefix_len": 3665,
       "persona_file": "agents\\sg-ontology-modeler.md"
     },
     {
@@ -1385,7 +1385,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3678,
+      "prefix_len": 3597,
       "persona_file": "agents\\sg-query-router.md"
     },
     {
@@ -1415,7 +1415,7 @@
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
       "skills": [],
-      "prefix_len": 1555,
+      "prefix_len": 1441,
       "persona_file": "agents\\dwb-fast-ask.md"
     }
   ]
