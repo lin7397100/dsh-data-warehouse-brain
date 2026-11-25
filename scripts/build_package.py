@@ -230,8 +230,18 @@ def build_patch_from_agents():
             e += 1
         while e > pre + 1 and lines[e - 1].strip() == "":
             e -= 1
+        new_block = render_prefix(md_path)
+        old_chars = sum(len(x) for x in lines[pre + 1:e])
+        new_chars = sum(len(x) for x in new_block)
+        # 防膨胀护栏（与 tools/sync_persona.py 同规则）：
+        # agents/*.md 是「详细知识库」，patch prefix 是「浓缩手册」，两者本就不同。
+        # 主理人 MD 约 75K 字符而 prefix 仅 13K，直接渲染会撑爆上下文。
+        if old_chars > 0 and new_chars > old_chars * 1.5:
+            out.extend(lines[i + 1:e])
+            i = e
+            continue
         out.extend(lines[i + 1:pre + 1])
-        out.extend(render_prefix(md_path))
+        out.extend(new_block)
         i = e
         rebuilt += 1
         continue

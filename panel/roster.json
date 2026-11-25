@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-25T15:47:18+08:00",
+    "generated_at": "2026-11-25T16:12:02+08:00",
     "package": "@sansteel/dsh-data-warehouse-brain",
     "count": 24,
     "skill_count": 67,
@@ -71,7 +71,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 60218,
+      "prefix_len": 10159,
       "persona_file": "agents\\data-warehouse-brain-team-lead.md"
     },
     {
