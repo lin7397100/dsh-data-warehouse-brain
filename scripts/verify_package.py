@@ -58,7 +58,7 @@ def main():
     print("== 1. 包清单 ==")
     man = json.loads(read(os.path.join(PKG, "package.json")))
     name = man.get("name", "")
-    if name == "@sansteel/dsh-data-warehouse-brain":
+    if name and re.match(r"^(?:@[a-z0-9][a-z0-9._-]*/)?[a-z0-9][a-z0-9._-]*$", name):
         ok("包名 " + name)
     else:
         bad("包名异常：%r" % name)
@@ -209,6 +209,24 @@ def main():
     for f in ("index.js", "routes.js", "client.js"):
         p = os.path.join(PKG, f)
         ok("%s (%d B)" % (f, os.path.getsize(p))) if os.path.isfile(p) else bad("%s 缺失" % f)
+
+    print("== 9. 包名三处一致（改名最容易漏）==")
+    panel_rows = [pl for e in (data or []) for pl in (e.get("insert") or [])
+                  if (pl.get("name") or "").startswith("@") and pl.get("id") == "dwb-team"]
+    if panel_rows and panel_rows[0].get("name") == name:
+        ok("面板宿主行 name = 包名")
+    else:
+        bad("面板宿主行 name 与包名不一致：%r" % (panel_rows[0].get("name") if panel_rows else None))
+    m = re.search(r"(?m)^  id: '([^']*)',$", read(os.path.join(PKG, "client.js")))
+    if m and m.group(1) == name:
+        ok("client 模块 id = 包名")
+    else:
+        bad("client 模块 id 与包名不一致：%r" % (m.group(1) if m else None))
+    skill_exprs = set(re.findall(r"resolve\('([^']+)/package\.json'\)", text))
+    if skill_exprs == {name}:
+        ok("bundledSkillDir 解析目标 = 包名")
+    else:
+        bad("bundledSkillDir 解析目标异常：%s" % sorted(skill_exprs))
 
     print()
     print("通过 %d 项，失败 %d 项" % (len(PASSED), len(FAILED)))

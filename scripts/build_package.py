@@ -30,9 +30,21 @@ ROSTER_OUT = os.path.join(PKG, "panel", "roster.json")
 AGENTS = os.path.join(PKG, "agents")
 SKILLS = os.path.join(PKG, "skills")
 
-PKG_NAME = "@sansteel/dsh-data-warehouse-brain"
+PKG_NAME_DEFAULT = "@sansteel/dsh-data-warehouse-brain"
 BUNDLE_DIRNAME = "dsh-data-warehouse-brain"
 IND = " " * 16
+
+
+def pkg_name():
+    """包名以 package.json 为唯一真源（改名只需改 manifest 再重建）。"""
+    try:
+        man = json.load(io.open(os.path.join(PKG, "package.json"), encoding="utf-8"))
+        return man.get("name") or PKG_NAME_DEFAULT
+    except (OSError, ValueError):
+        return PKG_NAME_DEFAULT
+
+
+PKG_NAME = pkg_name()
 
 OLD_TEAM_ROOT = ("C:/" + "Users/lin/Documents/deepseek-harness/data-warehouse-brain-team")
 NEW_TEAM_ROOT = r"$env:DSH_HOME\dwb-team"

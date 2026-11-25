@@ -12,7 +12,9 @@
 退出码：0 已就位/已改；1 --check 发现未改造
 """
 import io
+import json
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -20,10 +22,20 @@ PKG = os.path.dirname(HERE)
 ROUTES = os.path.join(PKG, "routes.js")
 CLIENT = os.path.join(PKG, "client.js")
 
+
+def pkg_name():
+    try:
+        man = json.load(io.open(os.path.join(PKG, "package.json"), encoding="utf-8"))
+        return man.get("name") or "@sansteel/dsh-data-warehouse-brain"
+    except (OSError, ValueError):
+        return "@sansteel/dsh-data-warehouse-brain"
+
+
 # 浏览器半必须用「包名」作为模块工厂 id（DSH 按包名查找 client 模块），
 # 旧的 @local/dwb-team-panel 会让本包的 client 永远不被加载。
+# id 行用正则改，包名换了也不用改脚本。
 CLIENT_EDITS = (
-    ("  id: '@local/dwb-team-panel',", "  id: '@sansteel/dsh-data-warehouse-brain',", "client 模块 id → 包名"),
+    (r"(?m)^  id: '[^']*',$", "  id: '%s'," % pkg_name(), "client 模块 id → 包名"),
     ("var PANEL_ID = 'dwb-team';", "var PANEL_ID = 'dwb-team-brain';", "面板 slot id 去重"),
     ("var STYLE_ID = 'dwb-team-panel/styles';", "var STYLE_ID = 'dwb-team-brain/styles';", "样式 id 去重"),
 )
@@ -93,20 +105,26 @@ ROOT_ROUTE = """  // 团队根 / 供给状态：专家排障与面板展示都�
 
 
 def port_file(path, edits, label):
+    """按 edits 改造一个文件；old 以 (?m) 开头视为正则（用于可变包名的行）。"""
     text = io.open(path, encoding="utf-8").read()
     todo = []
     for old, new, what in edits:
+        is_re = old.startswith("(?m)")
+        if is_re:
+            if re.search(old, text) and new not in text:
+                todo.append((old, new, what, True))
+            continue
         if new in text:
             continue
         if old not in text:
             print("FAIL: %s 找不到锚点「%s」" % (label, what))
             return 2
-        todo.append((old, new, what))
+        todo.append((old, new, what, False))
     if not todo:
         print("%s 已就位" % label)
         return 0
-    for old, new, what in todo:
-        text = text.replace(old, new, 1)
+    for old, new, what, is_re in todo:
+        text = re.sub(old, new, text, count=1) if is_re else text.replace(old, new, 1)
         print("  + %s → %s" % (label, what))
     io.open(path, "w", encoding="utf-8").write(text)
     return 0
