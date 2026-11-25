@@ -1,0 +1,21 @@
+# 依赖与构建产物
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+*.tgz
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 运行时数据（团队根里的用户数据，不进仓库）
+panel/overrides/
+observed/
+logs/
+traces/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

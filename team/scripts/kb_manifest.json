@@ -1,0 +1,306 @@
+{
+  "knowledge\\design\\indicator\\indicator_index.json": {
+    "sha256": "99caed93c58853e0c29b0bdd2790f2cae6e6bd95f1d95a5a9eaf76a18a6f3759",
+    "size": 2433448,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\indicator_registry.json": {
+    "sha256": "34ce2771d2b643bbb325326060f9f079766d45e91467f5fa85fe3292d1a7aaed",
+    "size": 6266187,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\indicator_registry_report.md": {
+    "sha256": "8666f8a94cc503be5b92e3a3aa8e808c224a09b215086bf85579abda540b7981",
+    "size": 1444,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\indicator_report.md": {
+    "sha256": "a16acefc71025592e11bf2bb7b6ecce86b0f448361580c8dc930aab37a8c67fb",
+    "size": 3762,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\indicator_system.json": {
+    "sha256": "0b401c6bae821c84276f8d4e9b9941650432832b038e892bbb72e7baf463e85f",
+    "size": 16937,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\indicator_system.yaml": {
+    "sha256": "26f96b42ff943c0d9d5c37f063f4bd6b8755939e77eaca70e1f2be14bb226fdc",
+    "size": 7498,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\lineage_graph.json": {
+    "sha256": "601c6186636c8cda8412ed1cc50ec65b95f653d037c1d311d1da5a71bf6a0cc0",
+    "size": 7919,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\indicator\\skill_inventory.json": {
+    "sha256": "5b12d7d48c74e5dd10a9c191f24f5bb1d4b70f4c426207f0b274e36fbd08dc04",
+    "size": 1761614,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\dict-alias.csv": {
+    "sha256": "224d01042c87a35171e466c59945394f191d61bf620af8a52398d201488e7043",
+    "size": 559341,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-CB01.csv": {
+    "sha256": "f019e00abbf1f4947424754658430257f59beb4af1500ba3ac7b254977b1f95d",
+    "size": 51504,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-CG01.csv": {
+    "sha256": "102daa4d93308316e0fd8e2019067b6e32aec951c3998698d0da93780a316f93",
+    "size": 1840,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-LG01.csv": {
+    "sha256": "5b8df3d9848a9a946eda7db7346be490f4b00882cfc1dd8c4b695a2ae1d8d9ef",
+    "size": 162069,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-LT01.csv": {
+    "sha256": "9b34e708b3d577626fcc88ae93bd18701b08ac0ef85645b8b316ab7d39d40eff",
+    "size": 298603,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-NY01.csv": {
+    "sha256": "09ff115206514a39bf025c27f4136ce4d41042723228cf6200a974adb9565b03",
+    "size": 125841,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-UNKNOWN.csv": {
+    "sha256": "a71c3b2fd07897354afd4764cc546bc57118ecf4fdf8a0a8f06e46cf36d5b8cd",
+    "size": 79932,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-YL01.csv": {
+    "sha256": "222e4288cf02e3c55fb5f7b56894cfeab27bae8f3fb0fd7f6d7aacadd356df81",
+    "size": 88756,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-ZG01.csv": {
+    "sha256": "ea0bbd2f5d36c3b3a51999a12273134a90f9d7ee503999b773ddf7038c4c4a73",
+    "size": 144615,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-cbprod.json": {
+    "sha256": "e9eb42805e9dc8a43d6e0d61aee1189983f023082c29aa1b8e943583ca24c458",
+    "size": 174284,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\semantic-gzprod.json": {
+    "sha256": "bf27bc371c54fe3a12c047e06e946f79c8e418b6a8d0e41062f23ee64abc6df4",
+    "size": 1336296,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\候选池-L0-core.csv": {
+    "sha256": "6ffc66360a36672550678bbc4e71d8a6a2c23f75bb13e65494ea76066100d5a0",
+    "size": 76721,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\候选池-L1-draft.csv": {
+    "sha256": "f5f58e534e0aed18b21725189c356a8257f282199c169f052e09d5d39e76265e",
+    "size": 781528,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\候选池-L2-indexed.csv": {
+    "sha256": "b055364353ecc3738f7d8b353262748c56e0b17cfc3344b5dd5e341ead767fb8",
+    "size": 382265,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\未校准清单-L0-2026-09-02.csv": {
+    "sha256": "e45a93abc29eb6f482dda3726ef3fa3dd01b91994a53db9d3ed673193a883133",
+    "size": 34483,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\池统计-2026-09-02.md": {
+    "sha256": "1d268aa9c35700ff0349ab2b7c4846bba1a71bc1e92054bd08c1694264dba6ba",
+    "size": 2128,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\semantic\\注册报告-2026-09-02.md": {
+    "sha256": "be2dabc21bfb22363d03cb7e3d51cccc8d8e18de7fc808bbedc70043eb63affe",
+    "size": 2907,
+    "target_kb": "227f0a01-c36b-488a-8049-5b5869175782"
+  },
+  "knowledge\\design\\skill_inventory.json": {
+    "sha256": "80865eda48a64786270a206883189df6f4e1e47283ce928019430803f7888f8d",
+    "size": 1896772,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\DB2_SQL优化指南.md": {
+    "sha256": "de64ca61efb0474a913bc1cc34493730ffcd2445118b410bf7a7cecbcab54567",
+    "size": 7607,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\EPLATDOC消息履历.md": {
+    "sha256": "7d1decad6dd37238f0f79db658ff6f7ec52da97f70c5b99380ccba224510316c",
+    "size": 18780,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\信使_开发接入最佳实践.md": {
+    "sha256": "ee7226f153a6d37d061b90ef46ee37f942cc25e117606f77aea7052f98b960c1",
+    "size": 14005,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\微服务表格.md": {
+    "sha256": "d58705b2329ea0b9a84727d435bc3200680a9804fe7b128bc40c79fff4c197a9",
+    "size": 68248,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\排查_维度建模问题排查.md": {
+    "sha256": "d7143bce4b3c6b151dfdcb3a6167bae603fc5f6dd7dc7218bb0e34a94d5000c8",
+    "size": 1734,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\数成_用户手册2024Q3.md": {
+    "sha256": "b978d0b22b2227109e947c4b618a1c1472e62fdab97d512a925fe769db7463cd",
+    "size": 528433,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\数据域_数据域建设工作方法.md": {
+    "sha256": "edf0fb96560b38825332c85ec0a0e56f8cfb54c782b611e5c87e2d77c0a14cd2",
+    "size": 27464,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\数据配置.md": {
+    "sha256": "8ef37b269eb22be3714c793e06c85135d7c460c90fc45ea889bb40e7964738b5",
+    "size": 11094,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\数智_数据服务.md": {
+    "sha256": "f0d68a16e4595198aa98c513590d5ed80553b5e936fbfdcfb157ed61363e351b",
+    "size": 12506,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\日期_通用指标日期函数.md": {
+    "sha256": "a4d868bc6ab13838c0922a4ecf94c7b459df8f6221c14a96b7fc9d0bb4ee2ad0",
+    "size": 5044,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\流程_5S平台开发流程ODS-API.md": {
+    "sha256": "bb1da532bc84cda89446bf98a12bc03fdddcf53ea18a483e79c4b3150f32d1cc",
+    "size": 6646,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\5s\\规范_数据模型开发规范.md": {
+    "sha256": "f40889532f5cb733af95404c4b0fca6f1095d301942e34cc8face869f3d08fc6",
+    "size": 144319,
+    "target_kb": "6838e00b-fb8e-4de3-9f08-425af71dbdbd"
+  },
+  "knowledge\\design\\eval\\predictions.json": {
+    "sha256": "19f627ceb5aaab282d5e72f2c4a2b3999e14697c9da9e411ce438842bfa576ca",
+    "size": 78952,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\regression_baseline_v2.json": {
+    "sha256": "1cd36f8278374bfdf766a2a4492ab27e162f5a9fce79394a5bda4b2a777111a5",
+    "size": 2227,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告-2026-09-02.md": {
+    "sha256": "e206258e4532ec7cfbac1541c06eb6962c0bf7e4a604d13e761d76f419090851",
+    "size": 1507,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告-2026-09-03.md": {
+    "sha256": "370b3d30d2b96df21491495f867c339f06ba2aca5531dca76b5efcd1c48400dc",
+    "size": 1507,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告-2026-10-09.md": {
+    "sha256": "69f58ec9ea2ed3e5259f6f9490a882208f9c5d5745e8f3bdfd8a59b9412814f7",
+    "size": 8992,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告-2026-11-05.md": {
+    "sha256": "378c89eaeb7c3498a257c27ddb96d2c605950b15866e26db77a0677b5216eb9e",
+    "size": 835,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告明细-2026-11-05.csv": {
+    "sha256": "8cc92b6816aafa6ff442d5cf02a1d5215249b81ff13eb87d07bfffa9ae8e7426",
+    "size": 9401,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线报告预测-2026-11-05.json": {
+    "sha256": "4fb57b15a62234b382bd2e0c4f10fa504ab262f81d18a209bc8f4e3d43f2d253",
+    "size": 20020,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线明细-2026-09-02.csv": {
+    "sha256": "1c113899a5c02938a2bb6a2c4065e190f73d18925b523b8c9c1a5bb684003aac",
+    "size": 7535,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线明细-2026-09-03.csv": {
+    "sha256": "1c113899a5c02938a2bb6a2c4065e190f73d18925b523b8c9c1a5bb684003aac",
+    "size": 7535,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线明细-2026-10-09.csv": {
+    "sha256": "a4ba4c1b7edfc0fcdea3f49b37f0b0f3c1c0ba3bb61fb7c59f9d3e0a71951fc8",
+    "size": 20851,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线预测-2026-09-02.json": {
+    "sha256": "2488bb9d720a28af2711cb26de15c6c9e406cd509154df8610976e664c499933",
+    "size": 31224,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线预测-2026-09-03.json": {
+    "sha256": "2488bb9d720a28af2711cb26de15c6c9e406cd509154df8610976e664c499933",
+    "size": 31224,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\基线预测-2026-10-09.json": {
+    "sha256": "0b860fae324eac647663a2de7d46e3da9d245207ccde813d8f018edafba47397",
+    "size": 93832,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "knowledge\\design\\eval\\黄金问题集-v1.0.csv": {
+    "sha256": "498b721a8f0ad1d0cdb12164ae21c3c126ea59f4cdfa6ac4119308833c11b0e3",
+    "size": 14502,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "scripts\\materialized_sql_guard.py": {
+    "sha256": "ba0bc5eca625be38864b76369132fad8c6a45386ba50fad05b45edef9cfa2284",
+    "size": 1502,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "scripts\\sg_db2_gateway.py": {
+    "sha256": "6ac1a1f5b6a409b5cb4674e08cebfd28ef8e056e17ccf869f1618823dd419e64",
+    "size": 10882,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "scripts\\wecom_smartsheet.py": {
+    "sha256": "3ffd9175afc9e6041d4c3d78bde864920fa83938a203219b48e4ffd89063b965",
+    "size": 8076,
+    "target_kb": null,
+    "audit_only": true
+  },
+  "skills\\sg-materialized-sql\\SKILL.md": {
+    "sha256": "0fd5a0094823509f079e04735bf6164ae29fdcca2bf8dbaa36506d915bb8a2ba",
+    "size": 9554,
+    "target_kb": null,
+    "audit_only": true
+  }
+}

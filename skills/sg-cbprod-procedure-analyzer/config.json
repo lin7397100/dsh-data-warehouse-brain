@@ -1,0 +1,41 @@
+{
+  "name": "cbms-procedure-performance-analyzer",
+  "version": "2.0.0",
+  "description": "CBMS 日成本存储过程性能分析报告生成器。从 CBMS PJJOB API 获取每日存储过程执行数据，按数据仓库分层（ODS/DWD/DWS/ADS/DIM）分类分析，生成 HTML 报告，支持发送到企业微信。",
+  "author": "OpenClaw",
+  "tags": [
+    "存储过程",
+    "procedure",
+    "performance",
+    "analysis",
+    "report",
+    "数据仓库",
+    "ODS",
+    "DWD",
+    "DWS",
+    "ADS",
+    "企业微信"
+  ],
+  "api": {
+    "url": "http://eplat.fjsg.com/service/D_A_SMBBCB00_PJJOB",
+    "method": "POST",
+    "auth": {
+      "type": "clientId",
+      "clientId": "sgdw-cb01",
+      "clientSecret": "537410A26EC7FE29B7258A7861D1C59F"
+    }
+  },
+  "output": {
+    "defaultPath": "Desktop",
+    "filePrefix": "CBMS_Procedure_Analysis",
+    "format": "html"
+  },
+  "files": [
+    "script.py",
+    "data_loader.py",
+    "report_generator.py",
+    "wecom_sender.py",
+    "SKILL.md",
+    "config.json"
+  ]
+}

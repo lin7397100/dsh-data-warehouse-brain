@@ -1,0 +1,4 @@
+# sg-indicator-system engine 依赖
+# 纯标准库实现，无需第三方依赖。
+# 如需扩展（如从 T_ADS_DIM_GZ01 CSV 大批量导入），可添加：
+#   pyyaml>=6.0   # 可选：若改用 yaml.safe_load/dump

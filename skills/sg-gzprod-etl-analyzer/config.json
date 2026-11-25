@@ -1,0 +1,37 @@
+{
+  "name": "etl-performance-analyzer",
+  "version": "2.4.0",
+  "description": "ETL 性能分析报告生成器 — 支持多模块合并加载 (GZ4,GZ5,GZ6)",
+  "author": "OpenClaw Team",
+  "license": "MIT",
+  "keywords": ["etl", "analysis", "report", "visualization", "wecom", "enterprise", "multi-module"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openclaw/etl-performance-analyzer"
+  },
+  "dependencies": {
+    "python": ">=3.8",
+    "packages": ["openpyxl", "requests"]
+  },
+  "config": {
+    "wecom": {
+      "api_url": "https://wecom.fjsg.com.cn",
+      "chatid": "MTk3MDMyNTYwMzAxNTYxMjpHygrR7KYUifUkH0BE_m4"
+    },
+    "etl": {
+      "default_module": "GZ4,GZ5,GZ6",
+      "api_url": "http://eplat.fjsg.com/service/D_A_SMBBCS01_JOBLOGS_LD1D_X"
+    },
+    "output": {
+      "default_directory": "desktop",
+      "filename_template": "ETL_Analysis_{date}_{module}.html"
+    }
+  },
+  "triggers": [
+    "分析ETL日志",
+    "生成ETL报告",
+    "ETL性能分析",
+    "抽取日志分析",
+    "ETL数据报告"
+  ]
+}

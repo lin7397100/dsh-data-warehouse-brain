@@ -1,0 +1,12 @@
+{
+  "slug": "ontology-app-builder",
+  "name": "本体驱动应用构建器（ontology-app-builder）",
+  "version": "1.0.0",
+  "installedAt": 1788402811850,
+  "source": "skillhub",
+  "namespace": "user_81d33501",
+  "canonicalName": "@user_81d33501/ontology-app-builder",
+  "iconSource": "https://skillhub-1388575217.cos.accelerate.myqcloud.com/skill-icons/uploads/717540/f897f5e999fb4161944b328c1293e377.png",
+  "iconLocalPath": "$env:DSH_HOME\\skills\\ontology-app-builder__skillhub\\_icon.png",
+  "iconDownloadedFrom": "https://skillhub-1388575217.cos.accelerate.myqcloud.com/skill-icons/uploads/717540/f897f5e999fb4161944b328c1293e377.png"
+}

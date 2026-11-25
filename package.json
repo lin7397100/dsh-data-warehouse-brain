@@ -1,0 +1,58 @@
+{
+  "name": "@sansteel/dsh-data-warehouse-brain",
+  "version": "1.0.0",
+  "description": "三钢数仓智脑专家团：24 位数仓专家（主理人冶衡 + 22 专家 + 快问）、65 个技能、侧边栏看板，一次安装即可用。",
+  "type": "module",
+  "license": "MIT",
+  "author": "SanSteel Data Warehouse Brain",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "agent-preset",
+    "data-warehouse",
+    "metric",
+    "ontology",
+    "semantic-layer",
+    "eplat"
+  ],
+  "icon": "icon.svg",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "routes.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "docs",
+    "panel/roster.json",
+    "agents",
+    "skills",
+    "assets/avatars/*.png",
+    "team"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "scripts": {
+    "build": "python scripts/build_package.py",
+    "check": "python scripts/build_package.py --check && python scripts/verify_package.py"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
