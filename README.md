@@ -11,14 +11,14 @@
 ### 方式一：图形界面（推荐）
 
 1. 打开 DSH → 设置 → **插件** → **安装插件**
-2. 填入本仓库地址：`https://github.com/<你的账号>/dsh-data-warehouse-brain`
+2. 填入本仓库地址：`https://github.com/lin7397100/dsh-data-warehouse-brain`
 3. 安装后启用，**完全退出 DSH 再重新打开**
 4. 新会话的 Agent 选择器里会出现「冶衡 · 首席数仓编排师」等 24 个 preset；左侧栏出现「数仓专家团」看板
 
 ### 方式二：命令行
 
 ```bash
-dsh plugin --profile web add github:<你的账号>/dsh-data-warehouse-brain
+dsh plugin --profile web add github:lin7397100/dsh-data-warehouse-brain@v1.0.0
 ```
 
 ### 方式三：离线
