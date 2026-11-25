@@ -15,6 +15,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { registerRoutes } from './routes.js';
+import { createMcpControl, registerMcpRoutes } from './mcp.js';
 
 export const name = 'dwb-team';
 export const inject = ['webServer', 'connection'];
@@ -99,6 +100,40 @@ export function apply(ctx, config) {
   const cfg = config || {};
   const root = resolveTeamRoot(cfg);
   let disposeRoutes = null;
+  let disposeMcpRoutes = null;
+
+  // ---- MCP 托管：状态持久化 + 运行时注册（点开关即时生效）----
+  const mcp = createMcpControl({
+    root,
+    getManager: function () {
+      try { return ctx.get('mcpManager'); } catch (_) { return null; }
+    },
+    log: function (msg) { try { console.log(msg); } catch (e) { void e; } },
+  });
+
+  // 主理人护栏：只有主理人挂了 delegate_expert；在其 scope 里禁掉全部 mcp__* 全局工具。
+  // 失败只记日志——绝不能因为护栏让 agent 创建失败。
+  function guardLead(agent) {
+    try {
+      if (!agent || !agent.ctx || !agent.ctx.tools || !ctx.tools) return;
+      const defs = ctx.tools.definitions(agent) || [];
+      const names = defs.map(function (d) { return d.name; });
+      if (names.indexOf('delegate_expert') < 0) return;
+      const mcpNames = names.filter(function (n) { return n.indexOf('mcp__') === 0; });
+      if (!mcpNames.length) return;
+      const lift = agent.ctx.tools.restrict({ deny: mcpNames });
+      if (typeof agent.ctx.effect === 'function') {
+        agent.ctx.effect(function () { return lift; }, 'dwb-team: 主理人屏蔽 mcp__*');
+      }
+      try { console.log('[dwb-team] 主理人已屏蔽 ' + mcpNames.length + ' 个 MCP 工具'); } catch (_) {}
+    } catch (e) {
+      try { console.log('[dwb-team] 主理人 MCP 护栏跳过：' + (e && e.message)); } catch (_) {}
+    }
+  }
+
+  if (cfg.guardLead !== false) {
+    try { ctx.on('agent/created', function (payload) { guardLead(payload && payload.agent); }); } catch (_) {}
+  }
 
   // 供给失败不拖垮面板：路由仍然挂载，状态经 /api/root 暴露。
   const ready = provision(root).then(
@@ -124,6 +159,42 @@ export function apply(ctx, config) {
         whenReady: ready,
       });
       ctx.effect(function () { return disposeRoutes; }, 'dwb-team: routes');
+
+      // MCP 开关路由（同前缀、同鉴权门）
+      const connGate = function (request, response) {
+        try {
+          if (!connection || typeof connection.requestRejection !== 'function') return false;
+          const rejection = connection.requestRejection(request);
+          if (rejection === undefined) return false;
+          const body = JSON.stringify({
+            ok: false,
+            error: rejection === 401 ? '需要登录后再操作' : '请求来源不可信',
+          });
+          response.writeHead(rejection, {
+            'content-type': 'application/json; charset=utf-8',
+            'content-length': Buffer.byteLength(body),
+          });
+          response.end(body);
+          return true;
+        } catch (_) {
+          return false;
+        }
+      };
+      disposeMcpRoutes = registerMcpRoutes({
+        webServer,
+        connection,
+        prefix: '/dwb-team/api',
+        control: mcp,
+        gate: connGate,
+      });
+      ctx.effect(function () { return disposeMcpRoutes; }, 'dwb-team: mcp routes');
+
+      // 团队根就绪后按持久化状态恢复 MCP
+      ready.then(function () {
+        return mcp.restore();
+      }).catch(function (e) {
+        try { console.log('[dwb-team] MCP 恢复失败：' + (e && e.message)); } catch (_) {}
+      });
     } else {
       console.error('[dwb-team] webServer 服务不可用，未挂载面板路由');
     }
@@ -132,7 +203,11 @@ export function apply(ctx, config) {
   }
 
   ctx.effect(function () {
-    return function () { if (typeof disposeRoutes === 'function') disposeRoutes(); };
+    return function () {
+      if (typeof disposeRoutes === 'function') disposeRoutes();
+      if (typeof disposeMcpRoutes === 'function') disposeMcpRoutes();
+      try { mcp.disposeAll(); } catch (_) {}
+    };
   }, 'dwb-team: dispose');
 
   return { name: name };

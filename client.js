@@ -46,7 +46,12 @@ window.__ModuleLoader__.load({
     var DICT = {
       zh: {
         nav: '数仓专家团', title: '数仓智脑专家团', refresh: '刷新',
-        tabRoster: '专家名册', tabOverview: '运行概览', tabRoutes: '路由记录', tabChains: '调度链路',
+        tabRoster: '专家名册', tabOverview: '运行概览', tabRoutes: '路由记录', tabChains: '调度链路', tabMcp: 'MCP 连接',
+        mcpEnable: '启用', mcpDisable: '停用', mcpTest: '测试连接', mcpTools: '工具',
+        mcpNeedToken: '需在 .env 配置 SG_WEKNORA_TOKEN', mcpProbing: '测试中…',
+        mcpState: { connected: '已连接', disabled: '未启用', connecting: '连接中',
+          reconnecting: '重连中', failed: '失败', closed: '已断开',
+          'waiting-credentials': '缺少令牌', unavailable: '不可用' },
         groupLead: '主理人', groupExpert: '专家', groupFast: '快车道',
         desc: '职责描述', prefixLen: '人设字数', plugins: '挂接插件',
         tools: '内置工具', mcp: 'MCP 接口', mcpEndpoint: '服务端',
@@ -80,7 +85,12 @@ window.__ModuleLoader__.load({
       },
       en: {
         nav: 'DWB Team', title: 'Data Warehouse Brain Team', refresh: 'Refresh',
-        tabRoster: 'Roster', tabOverview: 'Overview', tabRoutes: 'Routes', tabChains: 'Dispatch chain',
+        tabRoster: 'Roster', tabOverview: 'Overview', tabRoutes: 'Routes', tabChains: 'Dispatch chain', tabMcp: 'MCP',
+        mcpEnable: 'Enable', mcpDisable: 'Disable', mcpTest: 'Test', mcpTools: 'tools',
+        mcpNeedToken: 'Set SG_WEKNORA_TOKEN in .env', mcpProbing: 'Testing…',
+        mcpState: { connected: 'Connected', disabled: 'Disabled', connecting: 'Connecting',
+          reconnecting: 'Reconnecting', failed: 'Failed', closed: 'Closed',
+          'waiting-credentials': 'Missing token', unavailable: 'Unavailable' },
         groupLead: 'Lead', groupExpert: 'Expert', groupFast: 'Fast lane',
         desc: 'Description', prefixLen: 'Persona chars', plugins: 'Plugins',
         tools: 'Built-in tools', mcp: 'MCP endpoints', mcpEndpoint: 'Server',
@@ -240,6 +250,9 @@ window.__ModuleLoader__.load({
       var [applyMsg, setApplyMsg] = useState(null);
       var [loading, setLoading] = useState(true);
       var [error, setError] = useState('');
+      var [mcp, setMcp] = useState(null);
+      var [mcpBusy, setMcpBusy] = useState('');
+      var [probeMsg, setProbeMsg] = useState('');
 
       var loadAll = useCallback(async function () {
         setLoading(true); setError('');
@@ -256,9 +269,44 @@ window.__ModuleLoader__.load({
           if (g.ok) setRegistry({ ok: true, presets: g.presets || [] }); else setRegistry({ ok: false, presets: [] });
           var c = await fetchJson('/chains');
           if (c.ok) setChains(c.chains || []); else setChains([]);
+          var m = await fetchJson('/mcp');
+          if (m.ok) setMcp(m.servers || []); else setMcp(null);
         } catch (e) { setError(String(e && e.message || e)); }
         setLoading(false);
       }, [activeId, t]);
+
+      var postJson = async function (path, payload) {
+        var r = await fetch(API_BASE + path, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        try { return await r.json(); } catch (e) { return { ok: false, error: String(e) }; }
+      };
+
+      var toggleMcp = useCallback(async function (name, on) {
+        setMcpBusy(name); setProbeMsg('');
+        try {
+          var r = await postJson('/mcp/toggle', { name: name, on: on });
+          if (r.ok) {
+            var m = await fetchJson('/mcp');
+            if (m.ok) setMcp(m.servers || []);
+          } else { setError(r.error || t.loadFailed); }
+        } finally { setMcpBusy(''); }
+      }, [t]);
+
+      var testMcp = useCallback(async function (name) {
+        setMcpBusy(name); setProbeMsg(t.mcpProbing);
+        try {
+          var r = await postJson('/mcp/probe', { name: name });
+          if (r.ok) {
+            var p = r.probe || {};
+            var head = (p.ok ? '✅ ' : '❌ ') + name + ' · ' +
+              (p.ok ? (p.toolNames ? p.toolNames.length : 0) + ' ' + t.mcpTools : (p.stage || '') + ' ' + (p.message || ''));
+            setProbeMsg(head + ' · ' + (p.durationMs != null ? p.durationMs + 'ms' : ''));
+          } else { setProbeMsg('❌ ' + (r.error || t.loadFailed)); }
+        } finally { setMcpBusy(''); }
+      }, [t]);
 
       useEffect(function () { loadAll(); }, [loadAll]);
 
@@ -720,6 +768,40 @@ window.__ModuleLoader__.load({
         }));
       }
 
+      function renderMcp() {
+        if (!mcp) return h('div', { className: 'dwb-empty' }, t.empty);
+        var tone = function (st) {
+          if (st === 'connected') return '#22c55e';
+          if (st === 'failed') return '#ef4444';
+          if (st === 'connecting' || st === 'reconnecting') return '#f59e0b';
+          return '#9ca3af';
+        };
+        return h('div', null,
+          probeMsg && h('div', { className: 'dwb-chip', style: { marginBottom: 8 } }, probeMsg),
+          mcp.map(function (s) {
+            var st = (s.status && s.status.state) || 'disabled';
+            var label = (t.mcpState && t.mcpState[st]) || st;
+            return h('div', { key: s.name, className: 'dwb-row' },
+              h('div', { style: { flex: 1 } },
+                h('div', { style: { fontWeight: 600, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 } },
+                  h('span', { style: { width: 8, height: 8, borderRadius: 4, background: tone(st), display: 'inline-block' } }),
+                  s.label,
+                  h('span', { className: 'dwb-chip' }, label + (s.toolCount ? ' · ' + s.toolCount + ' ' + t.mcpTools : ''))),
+                h('div', { style: { fontSize: 11, color: 'var(--dsw-alias-label-secondary,#888)' } }, s.url),
+                h('div', { style: { fontSize: 11, opacity: 0.75 } }, s.purpose),
+                s.needsToken && h('div', { className: 'dwb-chip', style: { marginTop: 4 } }, t.mcpNeedToken)),
+              h('div', { style: { display: 'flex', gap: 8 } },
+                h('button', {
+                  className: 'dwb-btn', disabled: mcpBusy === s.name,
+                  onClick: function () { toggleMcp(s.name, !s.enabled); },
+                }, s.enabled ? t.mcpDisable : t.mcpEnable),
+                h('button', {
+                  className: 'dwb-btn', disabled: mcpBusy === s.name,
+                  onClick: function () { testMcp(s.name); },
+                }, t.mcpTest)));
+          }));
+      }
+
       return h('div', { className: 'dwb-root' },
         h('div', { className: 'dwb-header' },
           h('h2', null, t.title),
@@ -728,12 +810,13 @@ window.__ModuleLoader__.load({
           h('div', { className: 'dwb-tab' + (tab === 'roster' ? ' active' : ''), onClick: function () { setTab('roster'); } }, t.tabRoster),
           h('div', { className: 'dwb-tab' + (tab === 'overview' ? ' active' : ''), onClick: function () { setTab('overview'); } }, t.tabOverview),
           h('div', { className: 'dwb-tab' + (tab === 'routes' ? ' active' : ''), onClick: function () { setTab('routes'); } }, t.tabRoutes),
-          h('div', { className: 'dwb-tab' + (tab === 'chains' ? ' active' : ''), onClick: function () { setTab('chains'); } }, t.tabChains)),
+          h('div', { className: 'dwb-tab' + (tab === 'chains' ? ' active' : ''), onClick: function () { setTab('chains'); } }, t.tabChains),
+          h('div', { className: 'dwb-tab' + (tab === 'mcp' ? ' active' : ''), onClick: function () { setTab('mcp'); } }, t.tabMcp)),
         error && h('div', { className: 'dwb-err' }, error),
         h('div', { className: 'dwb-body' },
           tab === 'roster' && h('div', { className: 'dwb-list' }, renderList()),
           h('div', { className: 'dwb-content' },
-            tab === 'roster' ? renderDetail() : tab === 'overview' ? renderOverview() : tab === 'chains' ? renderChains() : renderRoutes()))
+            tab === 'roster' ? renderDetail() : tab === 'overview' ? renderOverview() : tab === 'chains' ? renderChains() : tab === 'mcp' ? renderMcp() : renderRoutes()))
       );
     }
 

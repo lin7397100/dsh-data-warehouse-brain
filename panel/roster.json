@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-25T16:12:02+08:00",
+    "generated_at": "2026-11-25T17:23:20+08:00",
     "package": "@sansteel/dsh-data-warehouse-brain",
     "count": 24,
     "skill_count": 67,
@@ -93,22 +93,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -154,22 +141,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -215,28 +189,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -312,22 +267,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -409,16 +351,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -476,28 +411,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-wecom-group"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-wecom-group",
-          "server_name": "wecom-group",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -566,22 +482,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -627,16 +530,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -676,22 +572,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -725,28 +608,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -780,16 +644,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -829,16 +686,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -872,22 +722,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -921,22 +758,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -970,34 +794,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-wecom-group",
-        "mcp-wecom-user"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-wecom-group",
-          "server_name": "wecom-group",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-wecom-user",
-          "server_name": "wecom-user",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1037,22 +836,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1104,22 +890,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1171,28 +944,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1226,28 +980,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-db2",
-        "mcp-weknora",
-        "mcp-eplat"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        },
-        {
-          "id": "mcp-eplat",
-          "server_name": "eplat",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1280,16 +1015,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1322,16 +1050,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1364,16 +1085,9 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction",
-        "mcp-weknora"
+        "compaction"
       ],
-      "mcp": [
-        {
-          "id": "mcp-weknora",
-          "server_name": "weknora",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1401,16 +1115,9 @@
         "tool-fs",
         "tool-fs-search",
         "tool-skill",
-        "skill-filesystem",
-        "mcp-db2"
+        "skill-filesystem"
       ],
-      "mcp": [
-        {
-          "id": "mcp-db2",
-          "server_name": "db2",
-          "transport": "streamable-http"
-        }
-      ],
+      "mcp": [],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],

@@ -41,7 +41,8 @@
     "scripts/publish_npm.ps1",
     ".env.example",
     "scripts/write_env.py",
-    "scripts/scrub_secrets.py"
+    "scripts/scrub_secrets.py",
+    "mcp.js"
   ],
   "dsh": {
     "bundle": {

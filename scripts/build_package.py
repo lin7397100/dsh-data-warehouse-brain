@@ -532,6 +532,39 @@ def ensure_panel_row(text):
     return text.rstrip("\n") + "\n" + PANEL_ROW
 
 
+def strip_preset_mcp(text):
+    """删除 preset 里的 mcp-client 行：改由面板 MCP 开关托管（mcp.js）。
+
+    为什么：preset 内的 mcp-client 只在预设首次激活时求值一次，用户点不动；
+    挪到 Host 级 mcpManager.register() 才能"点开关即时生效"。
+    """
+    lines = text.split("\n")
+    out = []
+    i = 0
+    removed = 0
+    while i < len(lines):
+        line = lines[i]
+        m = re.match(r"^(\s+)- id: (mcp-[A-Za-z0-9_-]+)$", line)
+        if m:
+            indent = len(m.group(1))
+            i += 1
+            # 跳到下一个同级或更浅的行
+            while i < len(lines):
+                nxt = lines[i]
+                if nxt.strip() == "":
+                    i += 1
+                    continue
+                lead = len(nxt) - len(nxt.lstrip())
+                if lead < indent or (lead == indent and nxt.lstrip().startswith("- ")):
+                    break
+                i += 1
+            removed += 1
+            continue
+        out.append(line)
+        i += 1
+    return "\n".join(out), removed
+
+
 def main(argv=None):
     _utf8()
     ap = argparse.ArgumentParser()
@@ -558,11 +591,16 @@ def main(argv=None):
         counts = init_copy(team_root)
         print("已复制：" + "，".join("%s=%d" % (k, v) for k, v in counts.items()))
         text, stats, changed = build_patch_from_profile(a.patch)
+        text, n_mcp = strip_preset_mcp(text)
+        print("已从 preset 移除 %d 个 mcp-* 行（改由面板 MCP 开关托管）" % n_mcp)
         io.open(PATCH_OUT, "w", encoding="utf-8").write(text)
         print("patch 生成：%d 个 preset 注入 bundledSkillDir，%d 个内网 MCP 行改为默认关"
               % (changed, stats.get("mcp_gated", 0)))
     else:
         text, rebuilt = build_patch_from_agents()
+        text, n_mcp = strip_preset_mcp(text)
+        if n_mcp:
+            print("已从 preset 移除 %d 个 mcp-* 行" % n_mcp)
         io.open(PATCH_OUT, "w", encoding="utf-8").write(text)
         print("patch 重建：%d 个 preset 的 persona 来自 agents/*.md" % rebuilt)
 

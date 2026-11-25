@@ -636,25 +636,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-ontology
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -1125,25 +1106,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-metadata
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -1398,33 +1360,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-development
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -1669,25 +1604,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-quality
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -1944,17 +1860,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-insight
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -2468,33 +2373,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-wecom-group
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: wecom-group
-              transport: streamable-http
-              url: !!js "process.env.SG_WECOM_GROUP_MCP_URL ?? 'http://10.18.136.38:8766/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-governance
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -2660,25 +2538,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-skill-evolution
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -2961,17 +2820,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-ontology-app-builder
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -3096,25 +2944,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-metric-builder
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -3382,33 +3211,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-memory
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -3627,17 +3429,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-supervisor
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -4046,17 +3837,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-zhishu-dashboard-designer
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -4202,25 +3982,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-zhishu-report-composer
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -4451,25 +4212,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-wecom-doc
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -4782,41 +4524,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-wecom-group
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: wecom-group
-              transport: streamable-http
-              url: !!js "process.env.SG_WECOM_GROUP_MCP_URL ?? 'http://10.18.136.38:8766/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-wecom-user
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: wecom-user
-              transport: streamable-http
-              url: !!js "process.env.SG_WECOM_USER_MCP_URL ?? 'http://10.18.136.38:8767/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-gzprod
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -4999,25 +4706,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-cbprod
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -5279,25 +4967,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-5s-dev
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -5496,33 +5165,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-5s-qa
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -5698,33 +5340,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
-          - id: mcp-eplat
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: eplat
-              transport: streamable-http
-              url: !!js "process.env.SG_EPLAT_MCP_URL ?? 'http://10.18.136.38:8770/mcp'"
-              toolCallTimeoutMs: 120000
-            disabled: !!js "process.env.SG_MCP === 'off'"
     - id: preset-sg-semantic-modeler
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -5866,17 +5481,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-ontology-modeler
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -6049,17 +5653,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     - id: preset-sg-query-router
       name: '@deepseek-ai/dsh-agent-preset'
       config:
@@ -6204,17 +5797,6 @@
                   thresholdChars: 8192
                   headChars: 4096
                   tailChars: 1024
-          - id: mcp-weknora
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: weknora
-              transport: streamable-http
-              url: !!js "process.env.SG_WEKNORA_MCP_URL ?? 'http://10.233.2.32:9080/mcp'"
-              toolCallTimeoutMs: 60000
-              headers:
-                Authorization: !!js "process.env.SG_WEKNORA_TOKEN ? 'Bearer ' +
-                  process.env.SG_WEKNORA_TOKEN : 'Bearer '"
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     # >>> DWB-FAST-LANE v1 (由 tools/enable_fast_lane.py 注入，勿手改) >>>
     - id: preset-dwb-fast-ask
       name: '@deepseek-ai/dsh-agent-preset'
@@ -6314,14 +5896,6 @@
             name: '@deepseek-ai/dsh-skill-filesystem'
             config:
               bundledSkillDir: !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')
-          - id: mcp-db2
-            name: '@deepseek-ai/dsh-mcp-client'
-            config:
-              serverName: db2
-              transport: streamable-http
-              url: !!js "process.env.SG_DB2_MCP_URL ?? 'http://10.18.136.38:8765/mcp'"
-              toolCallTimeoutMs: 60000
-            disabled: !!js "process.env.SG_MCP === 'off' || !process.env.DWB_INTERNAL_MCP"
     # <<< DWB-FAST-LANE v1 <<<
 
     - id: dwb-team
