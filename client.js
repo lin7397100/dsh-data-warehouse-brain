@@ -4,7 +4,7 @@
  * 数据全部走同源 GET /dwb-team/api/*；不直连 DB2 / MCP。
  */
 window.__ModuleLoader__.load({
-  id: '@local/dwb-team-panel',
+  id: '@sansteel/dsh-data-warehouse-brain',
   factory(require) {
     'use strict';
     var module = { exports: {} };
@@ -13,7 +13,7 @@ window.__ModuleLoader__.load({
 
     var NS = 'dwbTeam';
     var API_BASE = '/dwb-team/api';
-    var PANEL_ID = 'dwb-team';
+    var PANEL_ID = 'dwb-team-brain';
 
     var React = (function () {
       try { return require('react'); } catch (e1) {
@@ -114,7 +114,7 @@ window.__ModuleLoader__.load({
       }
     };
 
-    var STYLE_ID = 'dwb-team-panel/styles';
+    var STYLE_ID = 'dwb-team-brain/styles';
     var STYLE_CSS = [
       '.dwb-root{display:flex;flex-direction:column;height:100%;background:var(--dsw-alias-bg-base,#fff);color:var(--dsw-alias-label-primary,#1a1a1a);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}',
       '.dwb-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--dsw-alias-border-l1,#e5e5e5);background:var(--dsw-alias-bg-layer-1,#f7f7f8);flex-shrink:0}',
