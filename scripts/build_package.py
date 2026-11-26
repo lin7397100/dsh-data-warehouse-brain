@@ -59,8 +59,7 @@ BUNDLED_SKILL_EXPR = (
 
 INTERNAL_MCP_IDS = ("mcp-weknora", "mcp-db2", "mcp-wecom-group", "mcp-wecom-user")
 SG_MCP_OFF = '!!js "process.env.SG_MCP === \'off\'"'
-PUBLIC_GATE = ('!!js "process.env.SG_MCP === \'off\' || '
-               "!process.env.DWB_INTERNAL_MCP\"")
+PUBLIC_GATE = SG_MCP_OFF
 
 
 def _utf8():
@@ -591,7 +590,8 @@ def main(argv=None):
         counts = init_copy(team_root)
         print("已复制：" + "，".join("%s=%d" % (k, v) for k, v in counts.items()))
         text, stats, changed = build_patch_from_profile(a.patch)
-        text, n_mcp = strip_preset_mcp(text)
+        # B 方案：preset 保留 MCP 行（0.2.1 无 mcp-manager，删了就断通道）
+        n_mcp = 0
         print("已从 preset 移除 %d 个 mcp-* 行（改由面板 MCP 开关托管）" % n_mcp)
         io.open(PATCH_OUT, "w", encoding="utf-8").write(text)
         print("patch 生成：%d 个 preset 注入 bundledSkillDir，%d 个内网 MCP 行改为默认关"
@@ -599,8 +599,7 @@ def main(argv=None):
     else:
         text, rebuilt = build_patch_from_agents()
         text, n_mcp = strip_preset_mcp(text)
-        if n_mcp:
-            print("已从 preset 移除 %d 个 mcp-* 行" % n_mcp)
+        n_mcp = 0  # 保留 preset 内 MCP 行
         io.open(PATCH_OUT, "w", encoding="utf-8").write(text)
         print("patch 重建：%d 个 preset 的 persona 来自 agents/*.md" % rebuilt)
 

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-25T17:25:40+08:00",
+    "generated_at": "2026-11-26T12:40:52+08:00",
     "package": "@sansteel/dsh-data-warehouse-brain",
     "count": 24,
     "skill_count": 67,
@@ -93,9 +93,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -119,7 +132,7 @@
           "version": "2.0.0"
         }
       ],
-      "prefix_len": 8960,
+      "prefix_len": 8998,
       "persona_file": "agents\\sg-semantic.md"
     },
     {
@@ -141,9 +154,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -167,7 +193,7 @@
           "version": "1.1.0"
         }
       ],
-      "prefix_len": 14171,
+      "prefix_len": 14180,
       "persona_file": "agents\\sg-ontology.md"
     },
     {
@@ -189,9 +215,28 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -245,7 +290,7 @@
           "version": ""
         }
       ],
-      "prefix_len": 6529,
+      "prefix_len": 6580,
       "persona_file": "agents\\sg-metadata.md"
     },
     {
@@ -267,9 +312,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -329,7 +387,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6383,
+      "prefix_len": 6437,
       "persona_file": "agents\\sg-development.md"
     },
     {
@@ -351,9 +409,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -389,7 +454,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6351,
+      "prefix_len": 6323,
       "persona_file": "agents\\sg-quality.md"
     },
     {
@@ -411,9 +476,28 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-wecom-group"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-wecom-group",
+          "server_name": "wecom-group",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -461,7 +545,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 19394,
+      "prefix_len": 19320,
       "persona_file": "agents\\sg-insight.md"
     },
     {
@@ -482,9 +566,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -508,7 +605,7 @@
           "version": "1.0.1"
         }
       ],
-      "prefix_len": 3458,
+      "prefix_len": 3528,
       "persona_file": "agents\\sg-governance.md"
     },
     {
@@ -530,9 +627,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -550,7 +654,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 6145,
+      "prefix_len": 6198,
       "persona_file": "agents\\sg-skill-evolution.md"
     },
     {
@@ -572,9 +676,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -586,7 +703,7 @@
           "version": ""
         }
       ],
-      "prefix_len": 1479,
+      "prefix_len": 1567,
       "persona_file": "agents\\sg-ontology-app-builder.md"
     },
     {
@@ -608,9 +725,28 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -622,7 +758,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 7708,
+      "prefix_len": 7767,
       "persona_file": "agents\\sg-metric-builder.md"
     },
     {
@@ -644,9 +780,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -664,7 +807,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 5003,
+      "prefix_len": 4983,
       "persona_file": "agents\\sg-memory.md"
     },
     {
@@ -686,9 +829,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -700,7 +850,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 10563,
+      "prefix_len": 10437,
       "persona_file": "agents\\sg-supervisor.md"
     },
     {
@@ -722,9 +872,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -736,7 +899,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 1965,
+      "prefix_len": 2048,
       "persona_file": "agents\\sg-zhishu-dashboard-designer.md"
     },
     {
@@ -758,9 +921,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -772,7 +948,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3758,
+      "prefix_len": 3815,
       "persona_file": "agents\\sg-zhishu-report-composer.md"
     },
     {
@@ -794,9 +970,34 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-wecom-group",
+        "mcp-wecom-user"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-wecom-group",
+          "server_name": "wecom-group",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-wecom-user",
+          "server_name": "wecom-user",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -814,7 +1015,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 8104,
+      "prefix_len": 8137,
       "persona_file": "agents\\sg-wecom-doc.md"
     },
     {
@@ -836,9 +1037,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -868,7 +1082,7 @@
           "version": "3.0.0"
         }
       ],
-      "prefix_len": 3405,
+      "prefix_len": 3392,
       "persona_file": "agents\\sg-gzprod.md"
     },
     {
@@ -890,9 +1104,22 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -922,7 +1149,7 @@
           "version": "2.0.0"
         }
       ],
-      "prefix_len": 7124,
+      "prefix_len": 7071,
       "persona_file": "agents\\sg-cbprod.md"
     },
     {
@@ -944,9 +1171,28 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -958,7 +1204,7 @@
           "version": "1.1.0"
         }
       ],
-      "prefix_len": 3747,
+      "prefix_len": 3817,
       "persona_file": "agents\\sg-5s-dev.md"
     },
     {
@@ -980,9 +1226,28 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-db2",
+        "mcp-weknora",
+        "mcp-eplat"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        },
+        {
+          "id": "mcp-eplat",
+          "server_name": "eplat",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -994,7 +1259,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 2865,
+      "prefix_len": 2940,
       "persona_file": "agents\\sg-5s-qa.md"
     },
     {
@@ -1015,9 +1280,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1029,7 +1301,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 2528,
+      "prefix_len": 2612,
       "persona_file": "agents\\sg-semantic-modeler.md"
     },
     {
@@ -1050,9 +1322,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1064,7 +1343,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3665,
+      "prefix_len": 3746,
       "persona_file": "agents\\sg-ontology-modeler.md"
     },
     {
@@ -1085,9 +1364,16 @@
         "tool-todo",
         "tool-web",
         "present",
-        "compaction"
+        "compaction",
+        "mcp-weknora"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-weknora",
+          "server_name": "weknora",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
@@ -1099,7 +1385,7 @@
           "version": "1.0.0"
         }
       ],
-      "prefix_len": 3597,
+      "prefix_len": 3678,
       "persona_file": "agents\\sg-query-router.md"
     },
     {
@@ -1115,14 +1401,21 @@
         "tool-fs",
         "tool-fs-search",
         "tool-skill",
-        "skill-filesystem"
+        "skill-filesystem",
+        "mcp-db2"
       ],
-      "mcp": [],
+      "mcp": [
+        {
+          "id": "mcp-db2",
+          "server_name": "db2",
+          "transport": "streamable-http"
+        }
+      ],
       "skill_dirs": [
         "process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@sansteel/dsh-data-warehouse-brain/package.json')), 'skills')"
       ],
       "skills": [],
-      "prefix_len": 1441,
+      "prefix_len": 1555,
       "persona_file": "agents\\dwb-fast-ask.md"
     }
   ]
