@@ -18,6 +18,8 @@ import { registerRoutes } from './routes.js';
 import { createMcpControl, registerMcpRoutes } from './mcp.js';
 
 export const name = 'dwb-team';
+// tools 用于主理人护栏（restrict mcp__*）；mcpManager 用于 MCP 一键开关。
+// 两者都用 ctx.get() 可选取用，故 inject 只声明必需的服务，避免 profile 缺包时激活失败。
 export const inject = ['webServer', 'connection'];
 
 const PKG_DIR = path.dirname(fileURLToPath(import.meta.url));
@@ -115,8 +117,12 @@ export function apply(ctx, config) {
   // 失败只记日志——绝不能因为护栏让 agent 创建失败。
   function guardLead(agent) {
     try {
-      if (!agent || !agent.ctx || !agent.ctx.tools || !ctx.tools) return;
-      const defs = ctx.tools.definitions(agent) || [];
+      // 插件未声明 inject:['tools'] 时读取 ctx.tools 会抛
+      // "cannot get property ... without inject"，必须走 ctx.get()
+      let tools = null;
+      try { tools = ctx.get('tools'); } catch (_) { tools = null; }
+      if (!agent || !agent.ctx || !agent.ctx.tools || !tools) return;
+      const defs = tools.definitions(agent) || [];
       const names = defs.map(function (d) { return d.name; });
       if (names.indexOf('delegate_expert') < 0) return;
       const mcpNames = names.filter(function (n) { return n.indexOf('mcp__') === 0; });

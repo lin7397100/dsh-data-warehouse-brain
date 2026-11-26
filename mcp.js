@@ -86,7 +86,12 @@ async function writeState(root, state) {
 
 /**
  * 创建 MCP 控制器：负责状态持久化、注册/注销、状态查询。
- * manager 为 null（profile 未挂载 dsh-mcp-manager）时只读、不可切换。
+ *
+ * 两条通道（按宿主能力自动选择）：
+ *   A. dsh-mcp-manager 存在 → ctx.mcpManager.register()，真正的运行时开关；
+ *   B. 不存在（如 DSH 0.2.1 或装了第三方 connector）→ 降级为「配置建议模式」：
+ *      只记录期望状态并回报 external=true，提示用现有 MCP 面板/connector 开关，
+ *      绝不假装成功。
  */
 export function createMcpControl({ root, getManager, log }) {
   const say = log || (() => {});
@@ -101,6 +106,10 @@ export function createMcpControl({ root, getManager, log }) {
     } catch (_) {
       return null;
     }
+  }
+
+  function hasManager() {
+    return !!manager();
   }
 
   function entryOf(name) {
@@ -132,6 +141,16 @@ export function createMcpControl({ root, getManager, log }) {
 
   async function setEnabled(name, on) {
     if (!catalog[name]) throw new Error('未知服务器：' + name);
+    if (!hasManager()) {
+      // 降级通道：本机没有 dsh-mcp-manager，无法运行时注册。
+      // 只记录期望状态，并明确告知走外部 MCP 面板，不谎报成功。
+      state[name] = !!on;
+      await writeState(root, state);
+      return Object.assign(view(name), {
+        external: true,
+        hint: '本机 DSH 未内置 dsh-mcp-manager，请在「MCP连接器」或 profile 的 mcp 条目中开关该服务器',
+      });
+    }
     if (on) enable(name); else disable(name);
     state[name] = !!on;
     await writeState(root, state);
@@ -162,6 +181,7 @@ export function createMcpControl({ root, getManager, log }) {
       status: st,
       toolCount: st && st.state === 'connected' ? st.toolCount : 0,
       needsToken: !!c.needsToken,
+      external: !hasManager(),
     };
   }
 
@@ -169,9 +189,16 @@ export function createMcpControl({ root, getManager, log }) {
     return Object.keys(catalog).map(view);
   }
 
+  /** 宿主能力：managed=可运行时开关；external=只能靠外部 MCP 面板。 */
+  function channel() {
+    return hasManager() ? 'managed' : 'external';
+  }
+
   async function probe(name) {
     const m = manager();
-    if (!m || typeof m.probe !== 'function') throw new Error('MCP 管理器不支持探活');
+    if (!m || typeof m.probe !== 'function') {
+      throw new Error('本机未内置 dsh-mcp-manager，无法探活；请用「MCP连接器」里的测试按钮');
+    }
     const options = { timeoutMs: 20000, maxToolNames: 200 };
     return m.probe(name, options);
   }
@@ -208,7 +235,7 @@ export function createMcpControl({ root, getManager, log }) {
     for (const name of Object.keys(disposers)) disable(name);
   }
 
-  return { catalog, list, setEnabled, probe, restart, restore, disposeAll, view, stateOf: () => state };
+  return { catalog, list, setEnabled, probe, restart, restore, disposeAll, view, channel, stateOf: () => state };
 }
 
 /** 注册 /dwb-team/api/mcp* 路由（与主面板同一前缀与鉴权门）。 */
@@ -251,7 +278,7 @@ export function registerMcpRoutes({ webServer, connection, prefix, control, gate
     disposers.push(webServer.register({ kind: 'exact', path: PREFIX + routePath, handler }));
   }
 
-  route('/mcp', ['GET'], async () => ({ servers: control.list() }));
+  route('/mcp', ['GET'], async () => ({ servers: control.list(), channel: control.channel() }));
 
   route('/mcp/toggle', ['POST'], async (ctx) => {
     const name = String(ctx.body.name || '');

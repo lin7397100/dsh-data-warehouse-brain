@@ -12,7 +12,17 @@ window.__ModuleLoader__.load({
     Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
     var NS = 'dwbTeam';
-    var API_BASE = '/dwb-team/api';
+    // 子路径部署（--public-url https://host/dsh/）时，API 必须跟着页面前缀走，
+    // 否则请求会打到站点根、被反代回落成 HTML，前端 JSON.parse 失败。
+    var API_BASE = (function () {
+      try {
+        var base = document.baseURI || (location.origin + '/');
+        var u = new URL('dwb-team/api', base);
+        return u.pathname.replace(/\/+$/, '');
+      } catch (e) {
+        return '/dwb-team/api';
+      }
+    })();
     var PANEL_ID = 'dwb-team-brain';
 
     var React = (function () {
@@ -260,6 +270,7 @@ window.__ModuleLoader__.load({
       var [loading, setLoading] = useState(true);
       var [error, setError] = useState('');
       var [mcp, setMcp] = useState(null);
+      var [mcpResp, setMcpResp] = useState(null);
       var [mcpBusy, setMcpBusy] = useState('');
       var [probeMsg, setProbeMsg] = useState('');
 
@@ -279,7 +290,7 @@ window.__ModuleLoader__.load({
           var c = await fetchJson('/chains');
           if (c.ok) setChains(c.chains || []); else setChains([]);
           var m = await fetchJson('/mcp');
-          if (m.ok) setMcp(m.servers || []); else setMcp(null);
+          if (m.ok) { setMcp(m.servers || []); setMcpResp(m); } else { setMcp(null); setMcpResp(null); }
         } catch (e) { setError(String(e && e.message || e)); }
         setLoading(false);
       }, [activeId, t]);
@@ -299,7 +310,7 @@ window.__ModuleLoader__.load({
           var r = await postJson('/mcp/toggle', { name: name, on: on });
           if (r.ok) {
             var m = await fetchJson('/mcp');
-            if (m.ok) setMcp(m.servers || []);
+            if (m.ok) { setMcp(m.servers || []); setMcpResp(m); }
           } else { setError(r.error || t.loadFailed); }
         } finally { setMcpBusy(''); }
       }, [t]);
@@ -779,6 +790,7 @@ window.__ModuleLoader__.load({
 
       function renderMcp() {
         if (!mcp) return h('div', { className: 'dwb-empty' }, t.empty);
+        var external = !!(mcpResp && mcpResp.channel === 'external');
         var tone = function (st) {
           if (st === 'connected') return '#22c55e';
           if (st === 'failed') return '#ef4444';
@@ -786,6 +798,8 @@ window.__ModuleLoader__.load({
           return '#9ca3af';
         };
         return h('div', null,
+          external && h('div', { className: 'dwb-chip', style: { marginBottom: 8, display: 'block', whiteSpace: 'normal' } },
+            '本机 DSH 未内置 dsh-mcp-manager，无法在此运行时开关；请在左侧「MCP连接器」中启用对应服务器。以下仅记录期望状态。'),
           probeMsg && h('div', { className: 'dwb-chip', style: { marginBottom: 8 } }, probeMsg),
           mcp.map(function (s) {
             var st = (s.status && s.status.state) || 'disabled';
