@@ -193,8 +193,17 @@ window.__ModuleLoader__.load({
 
     async function fetchJson(path, options) {
       var resp = await fetch(API_BASE + path, options || {});
-      var data = await resp.json().catch(function () { return { ok: false, error: '响应不是 JSON' }; });
-      return data;
+      var text = '';
+      try { text = await resp.text(); } catch (e) { text = ''; }
+      var data = null;
+      try { data = text ? JSON.parse(text) : null; } catch (e) { data = null; }
+      if (data) return data;
+      var isHtml = /^\s*<(!doctype|html)/i.test(text || '');
+      var msg = '面板后端未就绪（HTTP ' + resp.status + '）';
+      msg += isHtml
+        ? '：代理把 /dwb-team/api 回落到了前端页面，需为 /dwb-team/ 配置转发'
+        : '：host 半没有注册 /dwb-team/api/*，请确认插件已启用并重启 DSH';
+      return { ok: false, error: msg, _notJson: true, _status: resp.status, _html: isHtml };
     }
 
     function IconComp() {
