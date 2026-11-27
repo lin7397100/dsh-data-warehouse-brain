@@ -63,6 +63,22 @@ dsh plugin --profile web add https://<代理前缀>/https://github.com/lin739710
 
 > 安装后**必须重启 DSH**：preset 组合与客户端插件在进程启动时装配。
 
+## MCP 默认状态（v1.3.0 起）
+
+**装完即全开，无需点开关。** 45 个 MCP 客户端实例随 24 个 preset 一起装配，默认连通：
+
+| 服务 | 默认端点 | 环境变量覆盖 |
+|---|---|---|
+| db2（取数主通道） | http://10.118.1.51:8765/mcp | SG_DB2_MCP_URL |
+| weknora（知识库，需令牌） | http://10.233.2.32:18082/mcp | SG_WEKNORA_MCP_URL / SG_WEKNORA_TOKEN |
+| plat（5S 设计态） | http://10.118.1.51:8770/mcp | SG_EPLAT_MCP_URL |
+| wecom-group（企微群） | http://10.118.1.51:8766/mcp | SG_WECOM_GROUP_MCP_URL |
+| wecom-user（企微个人） | http://10.118.1.51:8767/mcp | SG_WECOM_USER_MCP_URL |
+
+- **急停**：SG_MCP=off 一次性关停全部 MCP（其余值或不设 = 全开）。
+- **WeKnora 令牌**：不写入包内。设 SG_WEKNORA_TOKEN 才带 Authorization 头；未设时不发头（服务端会回 401，界面会显示未连接，但不影响其它四台）。
+- 单台端点不可达**不会**拖垮 preset：mcp-client 的 ailOnStartupError 默认为 alse。
+
 ## 你会得到什么
 
 | 载荷 | 内容 |

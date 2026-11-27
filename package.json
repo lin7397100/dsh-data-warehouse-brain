@@ -1,6 +1,6 @@
 {
   "name": "@sansteel/dsh-data-warehouse-brain",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "三钢数仓智脑专家团：24 位数仓专家（主理人冶衡 + 22 专家 + 快问）、65 个技能、侧边栏看板，一次安装即可用。",
   "type": "module",
   "license": "MIT",
@@ -45,7 +45,8 @@
     "mcp.js",
     "docs/MCP-TOGGLE.md",
     "scripts/diagnose-panel.sh",
-    "scripts/patch_client_errors.py"
+    "scripts/patch_client_errors.py",
+    "scripts/harden_mcp.py"
   ],
   "dsh": {
     "bundle": {
